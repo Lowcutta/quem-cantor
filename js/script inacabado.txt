@@ -1,0 +1,86 @@
+	<script type="text/javascript">
+		
+		var musica = new Audio('');
+		var resposta = new Audio('');
+		var cont = 0;
+		var msc = 0;
+
+		$('section.inicio button').on('click', function(){
+			musica = new Audio('musica/Bouncey.mp3');
+			musica.play();
+			
+			$('section').hide();
+			$('section.tela-2').show();
+
+			if (cont == 0) {
+				setInterval(function(){
+				var tempo = parseInt($('span.tempo').text());
+				soma = tempo + 1;
+				if (soma < 10) {
+					soma = "0"+soma;
+				};
+				$('span.tempo').text(soma);
+			},1000);
+			} else {
+				$('span.tempo').text('00');
+			}
+
+		});
+
+		$('section.tela-2 ul img.certo').one('click', function(){
+			resposta = new Audio('musica/correct.mp3');
+			resposta.play();
+			var acertos = parseInt($('span.acertos').text());
+			var soma = acertos + 1;
+			$('span.acertos').text(soma);
+			if (soma == 3) {
+				$('section').hide();
+				$('section.win').show();
+				musica.pause();
+				musica = new Audio('musica/victory.mp3');
+				musica.play();
+				
+			}	
+			$(this).css({opacity : 0.5});
+		});
+
+		var erros = 0;
+		$('section.tela-2 ul img.errado').one('click', function(){
+			resposta = new Audio('musica/error.mp3');
+			resposta.play();
+			erros += 1;
+			$(this).css({opacity : 0.5});
+
+			if (erros > 1) {
+				musica.pause();
+				$('section').hide();
+				$('section.gameover').show();
+				musica = new Audio('musica/defeat.mp3');
+				musica.play();
+			}
+		});
+
+		$('#home').on('click', function(){
+			musica.pause();
+			$('section').hide();
+			$('section.inicio').show();
+			cont++;
+		});
+
+		$('#som').on('click', function(){
+			if (msc == 0) {
+				musica.pause();
+				msc++;
+			} else {
+				musica.play();
+				msc--;
+			}
+		});
+
+		$('#ajuda').on('click', function(){
+			$('#dica1').css({opacity : 0.5});
+			$('#dica2').css({opacity : 0.5});
+			$('#dica3').css({opacity : 0.5});
+		});
+
+		</script>

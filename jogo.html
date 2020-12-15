@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Quem é o cantor?</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="font/material-icons.css"> 
+	</head>
+
+	<body>
+	<section class="inicio">
+		<h1>Quem é o cantor?</h1>
+		<h2>Descubra corretamente de quais artistas são as músicas para pontuar</h2>
+		<br>
+		<h2>1ª Fase: 2 músicas</h2>
+		<h2>2ª Fase: 3 músicas</h2>       
+		<button class="comecar">COMEÇAR</button>
+	</section>
+
+	<section class="telas tela-2">  
+		<header>
+		<p> 
+			ACERTOS: <span class="acertos">0</span>
+		</p>
+		<p>
+			<span class="mticons">alarm</span> 
+			00:<span class="tempo">00</span>
+		</p>
+		</header>
+
+		<div>
+		<h1>De quem é essa música? Nível 1</h1>
+		<ul>
+			<li><img class="primeira" id="" src="img/artists/ye.jpg"></li>
+			<p>Kanye West</p>
+		</ul>
+		<ul>
+			<li><img class="primeira" src="img/artists/cudi.jpg"></li>
+			<p>Kid Cudi</p>
+		</ul>
+		<ul>
+			<li><img class="primeira" src="img/artists/q.jpg"></li>
+			<p>ScHoolboy Q</p>
+		</ul>
+		<ul>
+			<li><img class="primeira" src="img/artists/kendrick.jpg"></li>
+			<p>Kendrick Lamar</p>
+		</ul>
+		</div>
+
+		<footer>
+		</footer>
+	</section><!-- end .flg  .tela-2 -->
+
+	<section class="telas tela-3">  
+		<header>
+		<p> 
+			ACERTOS: <span class="acertos">0</span>
+		</p>
+		<p>
+			<span class="mticons">alarm</span> 
+			00:<span class="tempo">00</span>
+		</p>
+		</header>
+
+		<div>
+		<h1>De quem é essa música? Nível 2</h1>
+		<ul>
+			<li><img class="segunda" id="" src="img/artists/frank.jpg"></li>
+			<p>Frank Ocean</p>
+		</ul>
+		<ul>
+			<li><img class="segunda" src="img/artists/tyler.jpg"></li>
+			<p>Tyler, The Creator</p>
+		</ul>
+		<ul>
+			<li><img class="segunda" src="img/artists/rocky.jpg"></li>
+			<p>A$AP Rocky</p>
+		</ul>
+		<ul>
+			<li><img class="segunda" src="img/artists/travis.jpg"></li>
+			<p>Travis Scott</p>
+		</ul>
+		</div>
+
+		<footer>
+		</footer>
+	</section><!-- end .flg  .tela-2 -->
+
+	<section class="tela-4">
+		<h1>Resultado</h1>
+		<br>
+		<h2>Tempo: 00:00</h2>
+		<br>
+		<h2>Acertos: 0</h2>
+		<br>
+		<h2>Erros: 0</h2>
+		<br>
+		<form>
+		<button>Voltar ao início</button>
+		</form>
+	</section>  
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+
+		 $(".comecar").on("click", function(){
+    		$("section").hide();
+   			$("section.telas.tela-2").show();
+		});
+		
+		$(".primeira").on("click", function(){
+    		$("section").hide();
+   			$("section.telas.tela-3").show();
+		});
+		
+		$(".segunda").on("click", function(){
+    		$("section").hide();
+   			$("section.tela-4").show();
+    	});
+
+	</script>
+
+	</body>
+</html>
